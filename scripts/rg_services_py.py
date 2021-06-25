@@ -21,6 +21,8 @@
 #	@copyright Copyright (c) 2021
 #
 
+
+
 import rospy
 
 import math
@@ -55,7 +57,7 @@ def rg_get_target_callback( limits ):
 ## 
 #	@brief Check if the distance between two points is less than a given tolerance 
 #	
-#	@param limits (robot_game/rg_check_target_srvRequest) it contains X and Xt
+#	@param data (robot_game/rg_check_target_srvRequest) it contains X and Xt
 #	@return robot_game/rg_check_target_srvRsponse if the orobt is near enough or not
 #   
 #   \see rg_data tolerance value
@@ -69,7 +71,7 @@ def rg_check_target_callback( data ):
 ## 
 #	@brief Check if the distance between two points is less than a given tolerance 
 #	
-#	@param limits (robot_game/rg_get_vel_srvRequest) X and Xt
+#	@param data (robot_game/rg_get_vel_srvRequest) X and Xt
 #	@return robot_game/rg_get_vel_srvResponse the Twist
 #   
 #   \see rg_data twist_gain value

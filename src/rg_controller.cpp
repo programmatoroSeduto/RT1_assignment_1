@@ -1,4 +1,25 @@
 
+/**
+ * @file rg_controller.cpp
+ * @author Francesco Ganci (S4143910)
+ * @brief C++ Controller for a smallholonomic mobile robot. 
+ * @version 1.0
+ * @date 2021-06-25
+ * 
+ * @details 
+ * This node implements a go-to-point behaviour using a very simple approach. <br>
+ * The controller listen to the topic 'base_pose_ground_truth'. When a new update about
+ * the posture comes, the controller generates a linear planar twist straight to the point,
+ * trying and approching to it. <br>
+ * When the target is "reached" (i.e. the robot is close enough to the target location), a 
+ * new randomly generated target is required to a dedicated service. 
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ * @see rg_controller_py.py the same controller, implemented in Python. 
+ * 
+ */
+
 #include "ros/ros.h"
 #include "ros/console.h"
 #include "geometry_msgs/PoseWithCovariance.h"
@@ -11,24 +32,44 @@
 #include "robot_game/rg_check_srv.h"
 #include "robot_game/rg_get_vel_srv.h"
 
-//include "robot_game/misc.h"
-
+/** x min bound */
 #define XMIN (-6.f)
+
+/** x max bound */
 #define XMAX (6.f)
+
+/** y min bound */
 #define YMIN (-6.f)
+
+/** y max bound */
 #define YMAX (6.f)
 
-ros::Subscriber in;	// subscription to base_pose_ground_truth (nav_msgs/Odometry)
-ros::Publisher out;	// publisher to cmd_vel (geometry_msgs/Twist)
+/** subscription to base_pose_ground_truth (nav_msgs/Odometry) */
+ros::Subscriber in;	
+
+/** publisher to cmd_vel (geometry_msgs/Twist) */
+ros::Publisher out;	
+
 ros::ServiceClient check_tg_srv;
 ros::ServiceClient newtg_srv;
 ros::ServiceClient get_vel_srv;
+
+/** the actual target */
 geometry_msgs::Point target;
 
 
 
 
-
+/**
+ * @brief require a new target to reach to the server. 
+ * 
+ * @param srv the service
+ * @param xmin x min bound
+ * @param xmax x max bound
+ * @param ymin y min bound
+ * @param ymax y max bound
+ * @return geometry_msgs::Point The new target to reach
+ */
 geometry_msgs::Point rg_get_new_target( ros::ServiceClient srv, double xmin, double xmax, double ymin, double ymax )
 {
 	// ask for a new target (rg_get_target)
@@ -46,7 +87,21 @@ geometry_msgs::Point rg_get_new_target( ros::ServiceClient srv, double xmin, dou
 
 
 
-
+/**
+ * @brief The main function of the controller
+ * 
+ * @param posemsg the actual posture received by the simulator
+ * 
+ * @details 
+ * This callback is called when a new position comes from the simulated environment via 'base_pose_ground_truth'. <br>
+ * It works in this way: <br>
+ * <ol>
+ * <li> get the actual pose from the received message </li>
+ * <li> check if the target was reached; if yes, ask for a new target </li>
+ * <li> generate the velocity to give the robot for approaching the goal </li>
+ * <li> publish the new velocity </li>
+ * </ol>
+ */
 void rg_controller_task( const nav_msgs::Odometry::ConstPtr& posemsg )
 {
 	// check if the target was reached (rg_check_target)
@@ -72,7 +127,9 @@ void rg_controller_task( const nav_msgs::Odometry::ConstPtr& posemsg )
 }
 
 
-
+/**
+ * @brief Ask for services, topics, and initialise the node. 
+ */
 int main( int argc, char** argv )
 {
 	ros::init( argc, argv, "rg_controller" );
