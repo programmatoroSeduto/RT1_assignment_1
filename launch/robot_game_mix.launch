@@ -1,7 +1,0 @@
-<!-- controller in Python; other nodes in cpp
-
-<launch>
-	<node pkg="stage_ros" name="stageros_simulator" type="stageros" args="$(find robot_game)/world/exercise.world" required="true"/>
-	<node pkg="robot_game" name="rg_services" type="rg_services" output="screen" />
-	<node pkg="robot_game" name="rg_controller.py" type="rg_controller" required="true" />
-</launch>

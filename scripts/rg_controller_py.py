@@ -20,7 +20,7 @@
 #
 
 import rospy
-import rg_data
+from robot_game import rg_data
 from geometry_msgs.msg import Twist, Point
 from nav_msgs.msg import Odometry
 from robot_game import srv

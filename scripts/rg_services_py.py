@@ -33,7 +33,7 @@ from geometry_msgs.msg import Twist
 from robot_game.srv import rg_get_target_srv, rg_get_target_srvResponse
 from robot_game.srv import rg_check_srv, rg_check_srvRequest, rg_check_srvResponse
 from robot_game.srv import rg_get_vel_srv, rg_get_vel_srvRequest, rg_get_vel_srvResponse
-import rg_data
+from robot_game import rg_data
 
 srv_get_target = None
 srv_check_target = None
