@@ -1,6 +1,13 @@
-# Request: Actual position, target position
+# service file name 'rg_check_srv'
+
+
+# actual position
 geometry_msgs/Point x
+
+# target position
 geometry_msgs/Point xt
+
 ---
 
+# is the goal "reached" (i.e. near under a certain tolerance)
 bool reached

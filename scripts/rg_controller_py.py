@@ -1,21 +1,53 @@
 #!/usr/bin/env python
 
+##
+#	@file rg_controller_py.py
+#	@author Francesco Ganci (S4143910)
+#	@brief A basic controller for an holonomic mobile robot. 
+#	@version 1.0
+#	@date 2021-06-25
+#	
+#	\details
+#	    This ROS node implements a simple go-to-point behaviour, using linear
+#	    planar twists. <br>
+#       It simply reaches the actual position, <br> evaluates the 
+#	    distance from it, <br> generates a linear planar twist <br> and finally sends it to the
+#	    simulated environment via 'cmd_vel'.
+#   
+#   \see rg_controller.cpp
+#	
+#	@copyright Copyright (c) 2021
+#
+
 import rospy
 import rg_data
 from geometry_msgs.msg import Twist, Point
 from nav_msgs.msg import Odometry
 from robot_game import srv
 
+## Topic handler from the simulation environment (Subscriber) 'base_pose_ground_truth'
 sim_input = None
+
+## Topic handler to the simulation environment (Publisher) 'cmd_vel'
 sim_output = None
 
+## Service entry point for checking if the target is reached
 srv_check_target = None
+
+## Service entry point for requiring a nwe random target
 srv_get_target = None
+
+## Service entry point for getting a linear planar twist
 srv_get_vel = None
 
+## The actual target (geometry_msgs/Point)
 xt = None
 
-
+## 
+#	@brief Get a new target to reac from the server
+#
+#	@return rg_get_target_srvResponse the new target
+#
 def get_new_target( ):
     request = srv.rg_get_target_srvRequest()
     request.xmin = -6
@@ -28,6 +60,20 @@ def get_new_target( ):
 
     return recv.xt
 
+## 
+#	@brief The main callback of the node. 
+#	
+#	@param pose (nav_msgs/Odometry) the actual posture of the robot
+#	
+#	\details
+# This callback is called when a new position comes from the simulated environment via 'base_pose_ground_truth'. <br>
+# It works in this way: <br>
+# <ol>
+# <li> get the actual pose from the received message </li>
+# <li> check if the target was reached; if yes, ask for a new target </li>
+# <li> generate the velocity to give the robot for approaching the goal </li>
+# <li> publish the new velocity </li>
+# </ol>
 
 def rg_controller_callback( pose ):
     global xt, srv_check_target, srv_get_vel, sim_output
@@ -47,7 +93,9 @@ def rg_controller_callback( pose ):
     # send the new twist
     sim_output.publish( vel_data.vel )
 
-
+## 
+#	@brief Called when shutdown signal is raised. 
+#   
 def controller_on_shutdown():
     rospy.loginfo( "(Robot Game) Controller node closed." )
 
