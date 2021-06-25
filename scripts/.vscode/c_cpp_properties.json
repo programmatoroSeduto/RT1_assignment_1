@@ -1,0 +1,20 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/rr/ROSwork/Assignment1/devel/include/**",
+        "/home/rr/ROSwork/ROStest/devel/include/**",
+        "/opt/ros/kinetic/include/**",
+        "/home/rr/ROSwork/ROStest/src/pubsub/include/**",
+        "/home/rr/ROSwork/Assignment1/src/robot_game/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}

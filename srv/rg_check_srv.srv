@@ -1,0 +1,6 @@
+# Request: Actual position, target position
+geometry_msgs/Point x
+geometry_msgs/Point xt
+---
+
+bool reached

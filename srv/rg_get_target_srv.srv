@@ -1,0 +1,9 @@
+# Request : the limits from the origin
+#    the space is an area (xmax - xmin)*(ymax - ymin) rectangle, centered in the origin
+float64 xmin
+float64 xmax
+float64 ymin
+float64 ymax
+---
+# Response: the new target to be reached
+geometry_msgs/Point xt
