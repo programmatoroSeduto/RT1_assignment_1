@@ -1,8 +1,11 @@
-# RT1 - Assignment 1 - Robot Game
+# README - RT1 - Assignment 1 - Robot Game
 
 **Francesco Ganci - 4143910** - Robotics Engineering - A.A. 2020/2021
 
 *Thanks to prof. Carmine Recchiuto for having provded the simulation environment.*
+
+> Take a look at the video demo of the project!
+> - [video demo Here!](https://drive.google.com/file/d/1cjAK4hsfgXw_uhdD6VYQhKxnCjhM49gN/view?usp=sharing)
 
 ## How to set up the project
 

@@ -44,7 +44,7 @@ srv_get_vel = None
 xt = None
 
 ## 
-#	@brief Get a new target to reac from the server
+#	@brief Ask the service for a new target to reach.
 #
 #	@return rg_get_target_srvResponse the new target
 #

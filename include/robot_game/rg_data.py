@@ -18,7 +18,7 @@
 ## Tolerance, i.e. minimum distance the robot must have to assume it reached. 
 tolerance = 0.1
 
-## Tsed in computing the linear output twist
+## Used for computing the linear output twist
 twist_gain = 1.0
 
 ## Name of the topic "base_pose_ground_truth" as input

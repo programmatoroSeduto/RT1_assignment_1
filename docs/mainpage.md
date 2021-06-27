@@ -4,13 +4,14 @@
 
 Robotics Engineering - A.A. 2020/2021
 
-> *Francesco Ganci* - S.4143910 
+> **Author** : *Francesco Ganci* - S.4143910 
 > - My gitHub: [programamtoroSeduto](https://github.com/programmatoroSeduto/) 
-> - Project page: [repository](https://github.com/programmatoroSeduto/RT1_assignment_1.git)
+> - Project repo: [RT1 - Assignment 1 Repo](https://github.com/programmatoroSeduto/RT1_assignment_1.git)
+> - **ROS version**: *Noetic*
+> - language: *Python*, *C++*
+> - Take a look at my **VIDEO DEMO** : [video demo Here!](https://drive.google.com/file/d/1cjAK4hsfgXw_uhdD6VYQhKxnCjhM49gN/view?usp=sharing)
 
-
-
-## C++ Implementation
+## Robot Game - C++ Implementation
 
 - `rg_controller.cpp`
 - `rg_services.cpp`
@@ -19,7 +20,7 @@ Robotics Engineering - A.A. 2020/2021
 
 ---
 
-## Python Implementation
+## Robot Game - Python Implementation
 
 - `rg_data.py`
 - `rg_controller_py.py`
