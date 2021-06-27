@@ -32,20 +32,20 @@ var NAVTREE =
         [ "Custom Services", "index.html#autotoc_md5", null ]
       ] ]
     ] ],
-    [ "Services", "d7/d8c/_services.html", "d7/d8c/_services" ],
-    [ "README - RT1 - Assignment 1 - Robot Game", "d3/dcc/md__r_e_a_d_m_e.html", [
-      [ "How to set up the project", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md18", [
-        [ "Prerequisites", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md19", null ],
-        [ "Compatibility", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md20", null ],
-        [ "Set-Up", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md21", null ]
+    [ "Services", "_services.html", "_services" ],
+    [ "README - RT1 - Assignment 1 - Robot Game", "md__r_e_a_d_m_e.html", [
+      [ "How to set up the project", "md__r_e_a_d_m_e.html#autotoc_md18", [
+        [ "Prerequisites", "md__r_e_a_d_m_e.html#autotoc_md19", null ],
+        [ "Compatibility", "md__r_e_a_d_m_e.html#autotoc_md20", null ],
+        [ "Set-Up", "md__r_e_a_d_m_e.html#autotoc_md21", null ]
       ] ],
-      [ "How to run the project", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md22", [
-        [ "Manually run the project", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md23", null ],
-        [ "Run the project with RosLaunch", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md24", null ]
+      [ "How to run the project", "md__r_e_a_d_m_e.html#autotoc_md22", [
+        [ "Manually run the project", "md__r_e_a_d_m_e.html#autotoc_md23", null ],
+        [ "Run the project with RosLaunch", "md__r_e_a_d_m_e.html#autotoc_md24", null ]
       ] ],
-      [ "Structure of the project", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md25", [
-        [ "Package File System", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md26", null ],
-        [ "Architecture of the project", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md27", null ]
+      [ "Structure of the project", "md__r_e_a_d_m_e.html#autotoc_md25", [
+        [ "Package File System", "md__r_e_a_d_m_e.html#autotoc_md26", null ],
+        [ "Architecture of the project", "md__r_e_a_d_m_e.html#autotoc_md27", null ]
       ] ]
     ] ],
     [ "Packages", "namespaces.html", [
@@ -70,7 +70,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"d0/d73/rg__controller_8cpp.html"
+"_d_o_c_s_r_v_rg_check_srv.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
