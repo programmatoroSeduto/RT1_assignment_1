@@ -1,6 +1,8 @@
 # RT1 - Assignment 1 - Robot Game
 
-Robotics Engineering - A.A. 2020/2021
+**Francesco Ganci - 4143910** - Robotics Engineering - A.A. 2020/2021
+
+*Thanks to prof. Carmine Recchiuto for having provded the simulation environment.*
 
 ## How to set up the project
 
@@ -39,14 +41,14 @@ Before launching any of the two available versions, remember to launch the *stag
 rosrun stage_ros stageros $(find robot_game)/world/exercise.world &
 ```
 
-C++ version:
+*C++ version*:
 
 ```bash
 rosrun robot_game rg_services
 rosrun robot_game rg_controller
 ```
 
-Python version: sumply add `_py.py` at the end of the names. 
+*Python version*: sumply add `_py.py` at the end of the names. 
 
 ```bash
 rosrun robot_game rg_services_py.py
@@ -63,7 +65,7 @@ Using `roslaunch` you don't need to start the simulation environment before.
 roslaunch robot_game robot_gambe_cpp.launch
 ```
 
-*Python version;*
+*Python version:*
 
 ```bash
 roslaunch robot_game robot_gambe_py.launch
@@ -87,8 +89,8 @@ Here are the significant folders inside this package:
 
 Both the versions have the same structure: two nodes, 
 
-- the first one provides all the service the controller needs
-- the secondo one interacts with the simulation for controlling the robot
+- the first one provides all the service the controller needs, *rg_services*
+- the secondo one interacts with the simulation for controlling the robot, *rg_controller*
 
 See this RosGraph:
 
@@ -99,7 +101,7 @@ The node labeled *rg_controller* reads the actual position from the topic */base
 The other node, *rg_services*, provides these services to the controller:
 
 - **/rg_get_target_srv** : generate a random target
-- **rg_check_target** : check if the robot is located *clone enough* to the goal position
-- **rg_get_vel_srv** : generate a linear velocity (as twist9 such that the robot can get closer to the goal.
+- **/rg_check_target** : check if the robot is located *clone enough* to the goal position
+- **/rg_get_vel_srv** : generate a linear velocity (as twist9 such that the robot can get closer to the goal
 
 The proposed algorithm works under the assumption that the world is completely free, that is there are no obstacles. 
