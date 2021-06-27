@@ -158,7 +158,7 @@ bool rg_get_velocity_callback( robot_game::rg_get_vel_srv::Request &initpos, rob
  */
 int main( int argc, char** argv )
 {
-	ros::init( argc, argv, "rg_server" );
+	ros::init( argc, argv, "rg_services" );
 	ros::NodeHandle h;
 	
 	ros::ServiceServer srv_check_target = h.advertiseService( "rg_check_target", rg_check_target_callback );

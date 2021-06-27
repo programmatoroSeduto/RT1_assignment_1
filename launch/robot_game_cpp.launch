@@ -4,6 +4,6 @@ rosrun stage_ros stageros /home/rr/ROSwork/Assignment1/src/assignment1/world/exe
 
 <launch>
 	<node pkg="stage_ros" name="stageros_simulator" type="stageros" args="$(find robot_game)/world/exercise.world" required="true"/>
-	<node pkg="robot_game" name="rg_services" type="rg_services" output="screen" />
+	<node pkg="robot_game" name="rg_services" type="rg_services" output="screen" required="true"/>
 	<node pkg="robot_game" name="rg_controller" type="rg_controller" required="true" />
 </launch>
