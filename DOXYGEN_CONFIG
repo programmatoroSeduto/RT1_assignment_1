@@ -44,7 +44,7 @@ PROJECT_NUMBER         = v1.0
 # for a project that appears at the top of each page and should give viewer a
 # quick idea about the purpose of the project. Keep the description short.
 
-PROJECT_BRIEF          = "RT1 - Assignment 1"
+PROJECT_BRIEF          = "Research Track part 1 - Assignment"
 
 # With the PROJECT_LOGO tag one can specify a logo or an icon that is included
 # in the documentation. The maximum height of the logo should not exceed 55
@@ -1003,7 +1003,7 @@ EXAMPLE_RECURSIVE      = NO
 # that contain images that are to be included in the documentation (see the
 # \image command).
 
-IMAGE_PATH             =
+IMAGE_PATH             = "C:/Users/Canfresco/Desktop/ROS1/assignment 1/RT1_assignment_1/docs/images"
 
 # The INPUT_FILTER tag can be used to specify a program that doxygen should
 # invoke to filter for each input file. Doxygen will invoke the filter program
@@ -1059,7 +1059,7 @@ FILTER_SOURCE_PATTERNS =
 # (index.html). This can be useful if you have a project on for instance GitHub
 # and want to reuse the introduction page also for the doxygen output.
 
-USE_MDFILE_AS_MAINPAGE = ./mainpage.md
+USE_MDFILE_AS_MAINPAGE = ./docs/mainpage.md
 
 #---------------------------------------------------------------------------
 # Configuration options related to source browsing
