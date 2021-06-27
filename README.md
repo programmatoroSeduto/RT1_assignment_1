@@ -9,6 +9,7 @@
 > 
 > Doxygen Documentation: 
 > - [Doxygen Documentation here](https://programmatoroseduto.github.io/RT1_assignment_1/)
+> - better: **branch *gh-pages***, download from there.
 
 ## How to set up the project
 
